@@ -1,1 +1,2 @@
 # finchcollector
+# django-collector

@@ -10,3 +10,6 @@ finches = [
 
 def all_finches(request):
     return render(request, 'main_app/all_finches.html', {'finches': finches})
+
+def about(request):
+    return render(request, 'about.html')

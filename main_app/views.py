@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic.edit import CreateView
 from .models import Finch
 
 finches = [
@@ -26,3 +27,8 @@ def finches_index(request):
 def finch_detail(request, finch_id):
     finch = get_object_or_404(Finch, pk=finch_id)
     return render(request, 'finches/detail.html', {'finch': finch})
+
+class FinchCreate(CreateView):
+    model = Finch
+    fields = '__all__'
+    template_name = 'finches/finch_form.html'

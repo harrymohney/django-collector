@@ -5,16 +5,5 @@ urlpatterns = [
   path('', views.home, name='home'),
   path('about/', views.about, name='about'),
   path('finches/', views.finches_index, name='index'),
+  path('finches/<int:finch_id>/', views.finch_detail, name='detail')
 ]
-
-
-# from django.contrib import admin
-# from django.urls import path
-# from main_app import views
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', views.home, name='home'),
-#     path('about/', views.about, name='about'),
-#     path('all_finches/', views.all_finches, name='all_finches')
-# ]

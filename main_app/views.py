@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Finch
 
 finches = [
     {'name': 'Canary Finch', 'color': 'Yellow', 'size': 'Small'},
@@ -9,6 +10,8 @@ finches = [
 ]
 
 def all_finches(request):
+    finches = Finch.objects.all()
+    context = {'finches': finches}
     return render(request, 'all_finches.html', context)
 
 def about(request):

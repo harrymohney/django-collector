@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Finch
 
 finches = [
@@ -32,3 +32,13 @@ class FinchCreate(CreateView):
     model = Finch
     fields = '__all__'
     template_name = 'finches/finch_form.html'
+
+class FinchUpdate(UpdateView):
+    model = Finch
+    template_name = 'finches/finch_form.html'
+    fields = ['name', 'color', 'size']
+
+class FinchDelete(DeleteView):
+    model = Finch
+    template_name = 'finches/confirm_delete.html'
+    success_url = '/finches/'

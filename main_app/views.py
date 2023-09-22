@@ -9,10 +9,16 @@ finches = [
     {'name': 'Zebra Finch', 'color': 'Gray', 'size': 'Small'}
 ]
 
-def all_finches(request):
-    finches = Finch.objects.all()
-    context = {'finches': finches}
-    return render(request, 'all_finches.html', context)
+def home(request):
+    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
+
+# def index(request):
+#     finches = Finch.objects.all()
+#     context = {'finches': finches}
+#     return render(request, 'finches/index.html', context)
+
+def finches_index(request):
+    return render(request, 'finches_index.html')
